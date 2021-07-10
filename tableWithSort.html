@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Table With Sort</title>
+    <style>
+        .decreasingArrow::after{
+            content: '\2193';
+            padding-left: 5px;
+            padding-right: 0px;
+            margin-right: 0px;
+        }
+        .increasingArrow::after{
+            content: '\2191';
+            padding-left: 5px;
+            padding-right: 0px;
+            margin-right: 0px;
+        }
+        table{
+            text-align: justify;
+            margin: 0 auto;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        thead{
+            background: #eee;
+            cursor: pointer;
+            margin: 0;
+        }
+        tbody{
+            margin: 0;
+        }
+        th, td{
+            border: solid 1px black;
+            margin: 0;
+            width: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+   <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Возраст</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Петров</td>
+                <td>Пётр</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Иванов</td>
+                <td>Иван</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Верхов</td>
+                <td>Алексей</td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Спорыхин</td>
+                <td>Леонид</td>
+                <td>18</td>
+            </tr>
+        </tbody>
+   
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+    
+    </table> 
+    <!-- <button></button> -->
+
+
+<script src="code.js"></script>
+</body>
+</html>
