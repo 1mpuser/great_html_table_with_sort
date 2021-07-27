@@ -43,6 +43,7 @@ for (let elem of ths)
 	elem.addEventListener('click', generealAscendingSortOfTables);
 let button = document.querySelector('button');
 button.addEventListener('click', changingTheColumns);
+let tds = document.querySelectorAll('td');
 // function numberAscendingSort() {
 // 	addingTheIncreasingArrow(this);
 // 	for (let i = length; i > 0; i--) {
@@ -311,11 +312,32 @@ function changingTheColumns() {
 	this.innerText = 'Отменить перестановку';
 	this.removeEventListener('click', changingTheColumns);
 	this.addEventListener('click', cancelAllChanges);
-	for (let elem of trsFromTBody) elem.addEventListener('click', pickAClass);
+	for (let elem of tds) elem.addEventListener('click', pickAClass);
 }
 
 function cancelAllChanges() {
 	this.innerText = 'Поменять столбцы';
 	this.removeEventListener('click', cancelAllChanges);
 	this.addEventListener('click', changingTheColumns);
+	for (let elem of tds) {
+		elem.removeEventListener('click', pickAClass);
+		elem.classList.remove('picked');
+	}
+}
+
+function pickAClass() {
+	let pickedCollection = document.getElementsByClassName('picked');
+	if (pickedCollection.length == 0) this.classList.add('picked');
+	else if (pickedCollection.length > 2) return;
+	else {
+		let one = pickedCollection[0];
+		this.classList.add('picked');
+		let first = one.innerText;
+		let second = this.innerText;
+		one.innerText = second;
+		this.innerText = first;
+		window.setTimeout(function () {
+			for (let elem of tds) elem.classList.remove('picked');
+		}, 500);
+	}
 }
